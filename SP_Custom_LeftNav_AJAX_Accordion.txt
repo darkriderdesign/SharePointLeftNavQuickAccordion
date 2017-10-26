@@ -1,11 +1,10 @@
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/bootstrap.js"></script>
 <script type="text/javascript">
+    $(document).ready(function() {
 
-$( document ).ready(function() {
-		
-	//SETUP UL 
-	 var list = "<ul class='root ms-core-listMenu-root static'>";
+        //SETUP UL 
+        var list = "<ul class='root ms-core-listMenu-root static'>";
 
         //console.log("PULLING SITES");
         $.ajax({
@@ -60,57 +59,54 @@ $( document ).ready(function() {
 
         $("#leftNavHolder").html(list);
 
-	
-	 /*set dynamic css logic*/
-	
-	 if($("#leftNavHolder ul[class='root ms-core-listMenu-root static'] li").length){
-	
-				$('#leftNavHolder .root.static > li.static').attr("href", "#");
-				$('#leftNavHolder .root.static > li.static').addClass('dropdown');
-				$('#leftNavHolder .root.static > li.static > a').addClass('accChevSymOn');
-				$('#leftNavHolder .root.static > li.static > a:first-of-type').before('<input type="checkbox" />');/**/
-				$('#leftNavHolder .root.static > li.static ul.static').addClass('dropdown-menu');	
 
-				
-	}
+        /*set dynamic css logic*/
 
-			
-				 $.each($("#leftNavHolder .root.static > li.static"), function() {
-				   
-				  		//console.log("loop items LIs");
-				  
-				    if($(this).has('ul').has('li').length){
-				  
-				  	  	console.log("HAS a UL that has LI"); 
+        if ($("#leftNavHolder ul[class='root ms-core-listMenu-root static'] li").length) {
 
-				}
-				else{
-						//console.log("HAS no UL");
-					
-					$(this).find("> a").removeClass('accChevSymOn');
-				
-				}
-				   
-				  
-				   
-				   
-   				});
-			
-	
-	 $(".container-fluid .navbar-toggle").click(function(e) {
-        e.preventDefault();/**/
-        $("#wrapper").toggleClass("toggled");
+            $('#leftNavHolder .root.static > li.static').attr("href", "#");
+            $('#leftNavHolder .root.static > li.static').addClass('dropdown');
+            $('#leftNavHolder .root.static > li.static > a').addClass('accChevSymOn');
+            $('#leftNavHolder .root.static > li.static > a:first-of-type').before('<input type="checkbox" />'); /**/
+            $('#leftNavHolder .root.static > li.static ul.static').addClass('dropdown-menu');
+
+
+        }
+
+
+        $.each($("#leftNavHolder .root.static > li.static"), function() {
+
+            //console.log("loop items LIs");
+
+            if ($(this).has('ul').has('li').length) {
+
+                console.log("HAS a UL that has LI");
+
+            } else {
+                //console.log("HAS no UL");
+
+                $(this).find("> a").removeClass('accChevSymOn');
+
+            }
+
+
+
+
+        });
+
+
+        $(".container-fluid .navbar-toggle").click(function(e) {
+            e.preventDefault(); /**/
+            $("#wrapper").toggleClass("toggled");
+        });
+
+
+
     });
-	
-	 
-	 
-});
-                 
 </script>
 
 
-                       <!-- BOOTSTRAP FRAMEWORK CSS -->
-						<link href="/css/bootstrap.css" type="text/css" rel="stylesheet" /> 
- 						<!-- CUSTOM CSS  -->
-                        <link href="/css/branding_styles.css" type="text/css" rel="stylesheet" />
-
+<!-- BOOTSTRAP FRAMEWORK CSS -->
+<link href="/css/bootstrap.css" type="text/css" rel="stylesheet" />
+<!-- CUSTOM CSS  -->
+<link href="/css/branding_styles.css" type="text/css" rel="stylesheet" />
