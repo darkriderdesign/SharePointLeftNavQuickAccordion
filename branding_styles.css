@@ -1,0 +1,185 @@
+@charset "utf-8";
+/*
+              .
+             /.\
+             |.|
+             |.|
+             |.|
+             |.|   ,'`.
+             |.|  ;\  /:
+             |.| /  \/  \
+             |.|<.<_\/_>,>
+             |.| \`.::,'/
+             |.|,'.'||'/.
+          ,-'|.|.`.____,'`.
+        ,' .`|.| `.____,;/ \
+       ,'=-.`|.|\ .   \ |,':
+      /_   :)|.|.`.___:,:,'|.
+     (  `-:;\|.|.`.)  |.`-':,\
+     /.   /  ;.:--'   |    | ,`.
+    / _>-'._.'-'.     |.   |' / )._
+   :.'    ((.__;/     |    |._ /__ `.___
+   `.>._.-' |)=(      |.   ;  '--.._,`-.`.
+            ',--'`-._ | _,:          `='`'
+            /_`-. `..`:'/_.\
+           :__``--..\\_/_..:
+           |  ``--..,:;\__.|
+           |`--..__/:;  :__|
+           `._____:-;_,':__;
+            |:'    /::'  `|
+            |,---.:  :,-'`;
+            : __  )  ;__,'\
+            \' ,`/   \__  :
+            :. |,:   :  `./
+            | `| |   |   |:
+            |  | |   |   ||
+            |  | |   |   ||
+            |  | |   '   ||
+            |  : |    \  ||
+            |  ; :    :  ||
+            | / ,;    |\,'`.
+            ;-.(,'    '-._,-`.
+          ,'-.//          `--'    
+*/
+
+/*//////////////////////*/
+/*//////////////////////*/
+/*/ LEFT NAV ACCORDION /*/
+/*//////////////////////*/
+/*//////////////////////*/
+
+#leftNavHolder .root.static {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+#leftNavHolder {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+.ms-core-listMenu-verticalBox li.static > ul.static > li.static > .ms-core-listMenu-item {
+    padding-left: 40px;
+	    display: block;
+    z-index: 10;
+	position: absolute;
+width: 100%;
+}
+.ms-core-listMenu-verticalBox li.static > ul.static > li.static > .ms-core-listMenu-item:hover, .ms-core-listMenu-verticalBox li.static > ul.static > li.static > .ms-core-listMenu-item:active, .ms-core-listMenu-verticalBox li.static > ul.static > li.static > .ms-core-listMenu-item:focus {
+	font-weight:bold;
+	color:#338200;
+   cursor: pointer;
+}
+.dropdown {
+    position: relative;
+}
+.dropdown a {
+    text-decoration: none;
+}
+.dropdown li {
+    display: block;
+   background-color: #414c53 !important;
+    padding: 0 !important;
+    /*border-bottom: 1px #ffffff solid;*/
+	position: relative;
+	/*height: 30px;*/
+}
+.dropdown > .dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.dropdown > .dropdown-menu li {
+    color: #FFFFFF;
+    /*background-color: #414c53 !important;*/
+    
+    padding: 0 !important;
+}
+.dropdown > .dropdown-menu li a {
+    display: block;
+    color: #6f6f6f !important;
+    background: #EEE;
+    font-size: 1em !important;
+    padding: 10px 10px;
+}
+.dropdown > .dropdown-menu li a:hover {
+    background: #f6f6f6;
+}
+.dropdown > input[type="checkbox"] {
+    opacity: 0 !important;
+display: block !important;
+position: absolute !important;
+top: -3px !important;
+width: 40px !important;
+height: 40px !important;
+cursor: pointer !important;
+right: 0;
+z-index: 99;
+}
+li[class*="static dropdown"] {
+    color: #FFFFFF;
+    background-color: #414c53 !important;
+    font-size: 1.2em;
+    border-bottom: 1px #ffffff solid;
+	/*min-height: 50px;*/
+}
+li[class*="static dropdown"] >.accChevSymOn:after {
+    font-family: "linea-arrows-10" !important;
+    content: "\e04b";
+    position: absolute;
+    right: 0;
+    z-index: 9;
+	padding: 5px 20px 5px 20px;
+    color: #ffffff !important;
+    top: -2%;
+    webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+li[class="static dropdown"] > input:checked ~ .accChevSymOn:after {
+    /* Rotate div */
+    
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    
+    -webkit-transform: rotate(90deg);
+    /* Chrome, Safari, Opera */
+    
+    transform: rotate(90deg);
+    top: 0;
+}
+
+
+li[class*="static dropdown"] > a.static > ul a.static:after {
+    display: none;
+}
+li[class="static dropdown"] > input:checked ~ ul a.static:after {
+    content: "";
+}
+li[class="static dropdown"] > input:checked ~ .dropdown-menu {
+    max-height: 9999px;
+    display: block;
+    webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+li[class="static dropdown"] > input:checked ~ .dropdown-menu > li a {
+padding: 10px 10px 10px 10px;
+}
+li[class*="static dropdown"] .ms-core-listMenu-item,
+li[class*="static dropdown"] .ms-core-listMenu-item:link,
+li[class*="static dropdown"] .ms-core-listMenu-item:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.1em !important;
+	display: block;
+	padding: 10px 10px 10px 10px;
+}
+/*/////////////*/
+/*/////////////*/
+/*/////////////*/
