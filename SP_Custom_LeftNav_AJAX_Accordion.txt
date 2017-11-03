@@ -66,16 +66,17 @@
             $('#leftNavHolder .root.static > li.static ul.static').addClass('dropdown-menu');
         }
 
-        $.each($("#leftNavHolder .root.static > li.static"), function() {
-
-            //console.log("loop items LIs");
-            if ($(this).has('ul').has('li').length) {
-                //console.log("HAS a UL that has LI");
-            } else {
-                //console.log("HAS no UL");
-                $(this).find("> a").removeClass('accChevSymOn');
-            }
-        });
+        $.each($("#leftNavHolder .root.static > li.static"), function() {				   
+				  	//console.log("loop items LIs");		  
+			if($(this).find("> ul li").length > 0){			  
+				  	//console.log("HAS a UL that has LI"); 
+			}
+			else{
+					//console.log("HAS no UL");					
+					$(this).find("> a").removeClass('accChevSymOn');
+				
+			}
+   		});
 
 
         $(".container-fluid .navbar-toggle").click(function(e) {
